@@ -9,7 +9,7 @@ function runner() {
   const spinner = ora('').start();
 
   const ydocPath = path.resolve(path.dirname(__dirname), '../bin/ydoc')
-    child_process.exec(`node ${ydocPath} build --mode=dev`, function(error, stdout, stderr){
+    child_process.exec(`node "${ydocPath}" build --mode=dev`, function(error, stdout, stderr){
       spinner.stop()
       if(error) throw error;
       if(stdout) process.stdout.write(stdout);
