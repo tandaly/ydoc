@@ -229,7 +229,7 @@ async function parseBook({ bookpath, indexFile, title }) {
       generatePage(getBookContext(book, {
         title: title,
         srcPath: absolutePath,
-        distPath: unescape(releativeHtmlPath)
+        distPath: decodeURIComponent(releativeHtmlPath)
       }));
     })(summary);
   }
@@ -257,8 +257,8 @@ function parseDocuments(bookpath, callback) {
         urlObj.hash = urlObj.hash ? urlObj.hash.toLowerCase() : '';
         item.ref = releativeHtmlPath + urlObj.hash;
         item.absolutePath = absolutePath;
-        if (utils.fileExist(unescape(absolutePath))) {
-          callback(unescape(absolutePath), releativeHtmlPath, item.title)
+        if (utils.fileExist(decodeURIComponent(absolutePath))) {
+          callback(decodeURIComponent(absolutePath), releativeHtmlPath, item.title)
         }
       }
 
