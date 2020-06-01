@@ -26,14 +26,14 @@ function handleArchor($){
 }
 
 module.exports = function parsePage(html, archor){
-  const $ = dom.parse(html);
+//   const $ = dom.parse(html);
   let page = {
-      title: $('h1:first-child').text().trim(),
-      description: $('div.paragraph,p').first().text().trim(),
+    //   title: $('h1:first-child').text().trim(),
+    //   description: $('div.paragraph,p').first().text().trim(),
       content: html
   };
   ids = [];
 
-  if(archor)page.content = handleArchor($);
+//   if(archor)page.content = handleArchor($);
   return page;
 }

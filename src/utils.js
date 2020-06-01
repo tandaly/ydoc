@@ -75,7 +75,7 @@ exports.hashEncode = function hashEncode(text){
 }
 
 exports.handleMdUrl = (findTransactionBySrcPath) => (content, filepath) => {
-  if(!/\.md/.test(content)){
+  if(!/\.md/.test(filepath)){
     return content;
   }
   let $ = dom.parse(content);
